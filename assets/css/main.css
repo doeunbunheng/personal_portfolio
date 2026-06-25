@@ -3724,3 +3724,209 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# Mobile Responsive Fixes
+--------------------------------------------------------------*/
+
+/* Footer responsive */
+@media (max-width: 768px) {
+  .footer h3.sitename {
+    font-size: 28px;
+  }
+  .footer p {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+}
+
+/* Page Title responsive */
+@media (max-width: 768px) {
+  .page-title {
+    padding: 80px 0 60px;
+  }
+  .page-title h1 {
+    font-size: 28px;
+  }
+  .page-title .breadcrumbs ol {
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    padding: 60px 0 40px;
+  }
+  .page-title h1 {
+    font-size: 24px;
+  }
+}
+
+/* Portfolio cards mobile */
+@media (max-width: 576px) {
+  .portfolio .portfolio-card {
+    margin: 0 -5px;
+  }
+  .portfolio .portfolio-content {
+    padding: 20px 15px;
+  }
+  .portfolio .portfolio-title {
+    font-size: 18px;
+  }
+  .portfolio .portfolio-description {
+    font-size: 14px;
+  }
+}
+
+/* Resume section mobile */
+@media (max-width: 576px) {
+  .resume .timeline-content h3 {
+    font-size: 18px;
+  }
+  .resume .timeline-content h4 {
+    font-size: 14px;
+  }
+  .resume .timeline-content p {
+    font-size: 14px;
+  }
+}
+
+/* Skills section mobile */
+@media (max-width: 576px) {
+  .skills .skill-category {
+    padding: 20px 15px;
+  }
+  .skills .category-title {
+    font-size: 20px;
+  }
+  .skills .lead-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
+
+/* Contact form mobile */
+@media (max-width: 576px) {
+  .contact .form-wrapper {
+    padding: 20px 15px;
+  }
+  .contact .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .contact .detail-value {
+    font-size: 14px;
+    word-break: break-word;
+  }
+}
+
+/* Service details mobile */
+@media (max-width: 576px) {
+  .service-details .service-hero h2 {
+    font-size: 24px;
+  }
+  .service-details .service-hero .lead {
+    font-size: 16px;
+  }
+  .service-details .feature-item {
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .service-details .feature-item i {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+  .service-details .process-steps .step {
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .service-details .step-number {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+
+/* Header mobile toggle */
+@media (max-width: 576px) {
+  .header .profile-img img {
+    width: 100px;
+    height: 100px;
+  }
+  .header .logo h1 {
+    font-size: 20px;
+  }
+  .header .social-links a {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Stats section extra small */
+@media (max-width: 576px) {
+  .stats .achievement {
+    padding: 20px 15px;
+  }
+  .stats .achievement-content h4 {
+    font-size: 16px;
+  }
+  .stats .achievement-content p {
+    font-size: 13px;
+  }
+}
+
+/* Hero section extra small */
+@media (max-width: 400px) {
+  .hero .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero .hero-content .hero-description {
+    font-size: 15px;
+  }
+  .hero .hero-content .stat-number {
+    font-size: 28px;
+  }
+  .hero .floating-card {
+    display: none;
+  }
+}
+
+/* About section extra small */
+@media (max-width: 400px) {
+  .about .intro-header h1 {
+    font-size: 28px;
+  }
+  .about .expertise-item {
+    padding: 20px 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .about .expertise-icon {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
+
+/* Sidebar certificates & strengths mobile */
+@media (max-width: 576px) {
+  .skills .achievement-list .achievement-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .skills .achievement-list .achievement-date {
+    min-width: auto;
+  }
+}
+
+/* General body padding for very small devices */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
