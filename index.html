@@ -1180,7 +1180,7 @@
                 <h3>Send me a message</h3>
               </div>
 
-              <form action="mailto:mrbunheng80@gmail.com" method="post" enctype="text/plain" class="php-email-form">
+              <form action="https://formspree.io/f/xpznnqwp" method="POST" class="php-email-form">
 
                 <div class="row">
                   <div class="col-md-6">
@@ -1206,6 +1206,10 @@
                   <label for="projectMessage">Message</label>
                   <textarea name="message" id="projectMessage" rows="5" required=""></textarea>
                 </div>
+
+                <!-- Anti-spam -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_gotcha" style="display:none">
 
                 <div class="my-3">
                   <div class="loading">Loading</div>
