@@ -66,6 +66,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  overflow-x: hidden;
 }
 
 a {
@@ -1086,6 +1087,143 @@ section,
   transform: translateY(-1px);
 }
 
+.about .personality-section {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.about .personality-section .section-intro {
+  margin-bottom: 2rem;
+}
+
+.about .personality-section .section-intro .icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.about .personality-section .section-intro .icon-wrapper i {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.about .personality-section .section-intro h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.about .personality-section .personality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.about .personality-section .personality-main {
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.about .personality-section .personality-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about .personality-section .type-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 8px;
+}
+
+.about .personality-section .type-label {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.about .personality-section .type-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about .personality-section .score-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: color-mix(in srgb, var(--accent-color), transparent 93%);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+}
+
+.about .personality-section .score-letter {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.about .personality-section .score-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.about .personality-section .personality-summary {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
+.about .personality-section .personality-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about .personality-section .personality-block {
+  background: color-mix(in srgb, var(--default-color), transparent 97%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+}
+
+.about .personality-section .personality-block h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+
+.about .personality-section .personality-block p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: 0;
+}
+
 @keyframes pulse {
 
   0%,
@@ -1124,11 +1262,28 @@ section,
     justify-content: flex-start;
     margin-top: 1.5rem;
   }
+
+  .about .personality-section .personality-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
   .about .intro-header h1 {
     font-size: 2.2rem;
+  }
+
+  .about .personality-section .section-intro h2 {
+    font-size: 1.5rem;
+  }
+
+  .about .personality-section .personality-main,
+  .about .personality-section .personality-block {
+    padding: 1.5rem;
+  }
+
+  .about .personality-section .type-badge {
+    font-size: 1.1rem;
   }
 
   .about .intro-header .subtitle {
