@@ -4085,3 +4085,1048 @@ section,
     padding-right: 12px;
   }
 }
+
+/*--------------------------------------------------------------
+# Enhanced Responsive Design - All Devices
+--------------------------------------------------------------*/
+
+/* =====================
+   BASE RESPONSIVE
+   ===================== */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================
+   TABLETS (768px - 992px)
+   ===================== */
+@media (max-width: 992px) {
+  .hero {
+    min-height: auto;
+    padding: 100px 0 60px;
+  }
+  
+  .hero .container {
+    padding: 60px 15px;
+  }
+
+  .hero .hero-content .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .hero .hero-content .hero-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about .personality-section .personality-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about .personality-section .personality-main,
+  .about .personality-section .personality-column {
+    width: 100%;
+  }
+
+  .about .philosophy-quote {
+    padding: 2rem 2.5rem;
+  }
+
+  .portfolio .portfolio-filters {
+    gap: 20px;
+  }
+
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .services .service-item {
+    padding: 30px 25px;
+  }
+}
+
+/* =====================
+   MOBILE (576px - 768px)
+   ===================== */
+@media (max-width: 768px) {
+  /* Global */
+  section, .section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    padding-bottom: 40px;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  /* Header */
+  .header .profile-img img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .header .logo h1 {
+    font-size: 18px;
+  }
+
+  .header .navmenu ul li a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  /* Hero */
+  .hero .container {
+    padding: 40px 15px;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .hero .hero-content .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .hero .hero-content .stat-item {
+    text-align: center;
+    padding: 10px 5px;
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 32px;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero .floating-card {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .hero .floating-card i {
+    font-size: 14px;
+  }
+
+  .hero .floating-card.card-1 { top: 10%; left: -5%; }
+  .hero .floating-card.card-2 { top: 50%; right: -8%; }
+  .hero .floating-card.card-3 { bottom: 10%; left: 5%; }
+
+  /* About */
+  .about .intro-header h1 {
+    font-size: 2rem;
+  }
+
+  .about .intro-header .subtitle {
+    font-size: 1rem;
+  }
+
+  .about .profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .about .profile-image-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1rem;
+  }
+
+  .about .expertise-grid {
+    gap: 1rem;
+  }
+
+  .about .expertise-item {
+    padding: 20px 15px;
+  }
+
+  .about .expertise-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .about .expertise-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about .philosophy-quote {
+    padding: 1.5rem 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .about .philosophy-quote .quote-mark {
+    font-size: 3rem;
+  }
+
+  .about .philosophy-quote p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about .personality-section {
+    margin-top: 2rem;
+  }
+
+  .about .personality-section .section-intro h2 {
+    font-size: 1.4rem;
+  }
+
+  .about .personality-section .personality-main {
+    padding: 1.5rem;
+  }
+
+  .about .personality-section .personality-block {
+    padding: 1.5rem;
+  }
+
+  .about .bottom-section {
+    padding-top: 2rem;
+  }
+
+  .about .bottom-section .collaboration-text h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .about .bottom-section .action-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about .bottom-section .action-buttons .btn-custom {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Stats */
+  .stats {
+    padding: 50px 0;
+  }
+
+  .stats .achievements-row {
+    gap: 20px;
+  }
+
+  .stats .achievement {
+    padding: 20px 15px;
+  }
+
+  .stats .achievement-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+  }
+
+  .stats .achievement-content h4 {
+    font-size: 16px;
+  }
+
+  .stats .achievement-content p {
+    font-size: 13px;
+  }
+
+  /* Skills */
+  .skills .intro-content .lead-text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .skills .skills-container .skill-category {
+    padding: 25px 20px;
+  }
+
+  .skills .skills-container .skill-category .category-header .category-title {
+    font-size: 20px;
+  }
+
+  .skills .skills-container .skill-category .category-header .category-subtitle {
+    font-size: 14px;
+  }
+
+  .skills .skills-container .skill-category .skills-list .skill-row .skill-info .skill-name {
+    font-size: 14px;
+  }
+
+  .skills .skills-sidebar {
+    margin-top: 2rem;
+  }
+
+  .skills .skills-sidebar .expertise-highlight {
+    padding: 30px 20px;
+    margin-bottom: 25px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .highlight-icon i {
+    font-size: 36px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .highlight-title {
+    font-size: 18px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .experience-number .purecounter {
+    font-size: 42px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item i {
+    font-size: 16px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item span {
+    font-size: 12px;
+  }
+
+  /* Resume */
+  .resume .professional-journey .experience-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .resume .education-skills .education-grid .education-card {
+    padding: 1.5rem;
+  }
+
+  .resume .education-skills .education-grid .education-card .education-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .resume .education-skills .education-grid .education-card .education-header .degree-icon {
+    margin: 0 auto;
+  }
+
+  .resume .education-skills .education-grid .certification-section .certifications .cert-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .resume .education-skills .education-grid .certification-section .certifications .cert-item .cert-details {
+    width: 100%;
+  }
+
+  /* Portfolio */
+  .portfolio .portfolio-filters {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .portfolio .portfolio-filters li {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .portfolio .portfolio-image img {
+    height: 220px;
+  }
+
+  .portfolio .portfolio-content {
+    padding: 20px 15px;
+  }
+
+  .portfolio .portfolio-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .portfolio .portfolio-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .portfolio .portfolio-meta {
+    margin-bottom: 8px;
+  }
+
+  .portfolio .portfolio-meta .portfolio-category {
+    font-size: 11px;
+  }
+
+  .portfolio .portfolio-meta .portfolio-year {
+    font-size: 11px;
+  }
+
+  /* Services */
+  .services {
+    padding: 50px 0;
+  }
+
+  .services .service-item {
+    padding: 25px 20px;
+    margin-bottom: 15px;
+  }
+
+  .services .service-item .service-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .services .service-item .service-icon i {
+    font-size: 20px;
+  }
+
+  .services .service-item .service-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .services .service-item .service-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 60px 0;
+  }
+
+  .contact .info-item {
+    margin-bottom: 40px;
+  }
+
+  .contact .info-item .info-content h4 {
+    font-size: 18px;
+  }
+
+  .contact .info-item .info-content p {
+    font-size: 14px;
+  }
+
+  .contact .contact-details .detail-item {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .contact .contact-details .detail-item .detail-content .detail-label {
+    font-size: 12px;
+  }
+
+  .contact .contact-details .detail-item .detail-content .detail-value {
+    font-size: 14px;
+  }
+
+  .contact .form-header h3 {
+    font-size: 22px;
+  }
+
+  .contact .form-wrapper .form-group input,
+  .contact .form-wrapper .form-group textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .footer h3.sitename {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .footer .copyright {
+    font-size: 12px;
+  }
+}
+
+/* =====================
+   SMALL MOBILE (max 576px)
+   ===================== */
+@media (max-width: 576px) {
+  /* Global */
+  section, .section {
+    padding: 40px 0;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  /* Header */
+  .header .profile-img img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .header .logo h1 {
+    font-size: 16px;
+  }
+
+  .header .social-links a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* Hero */
+  .hero .hero-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero .hero-content .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero .hero-content .hero-actions .btn-primary,
+  .hero .hero-content .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 12px 24px;
+  }
+
+  .hero .hero-content .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 28px;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 11px;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 260px;
+  }
+
+  .hero .floating-card {
+    display: none;
+  }
+
+  /* About */
+  .about .intro-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .about .profile-image-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about .expertise-item {
+    padding: 15px 12px;
+  }
+
+  .about .philosophy-quote {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .about .philosophy-quote .quote-mark {
+    font-size: 2.5rem;
+    left: 5px;
+  }
+
+  .about .personality-section .personality-main {
+    padding: 1rem;
+  }
+
+  .about .personality-section .personality-block {
+    padding: 1rem;
+  }
+
+  .about .personality-section .type-badge {
+    font-size: 0.9rem;
+    padding: 4px 10px;
+  }
+
+  /* Stats */
+  .stats .achievements-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .stats .achievement {
+    padding: 15px 12px;
+    gap: 12px;
+  }
+
+  .stats .achievement-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+
+  .stats .achievement-content h4 {
+    font-size: 15px;
+  }
+
+  .stats .achievement-content p {
+    font-size: 12px;
+  }
+
+  /* Skills */
+  .skills .intro-content .lead-text {
+    font-size: 16px;
+  }
+
+  .skills .skills-container .skill-category {
+    padding: 20px 15px;
+  }
+
+  .skills .skills-container .skill-category .category-header .category-title {
+    font-size: 18px;
+  }
+
+  .skills .skills-container .skill-category .skills-list .skill-row .skill-info .skill-name {
+    font-size: 13px;
+  }
+
+  .skills .skills-container .skill-category .skills-list .skill-row .skill-info .skill-percentage {
+    font-size: 12px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .experience-number .purecounter {
+    font-size: 36px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item {
+    padding: 10px 8px;
+    gap: 6px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item i {
+    font-size: 14px;
+  }
+
+  .skills .skills-sidebar .technologies-section .tech-stack .tech-item span {
+    font-size: 11px;
+  }
+
+  .skills .skills-sidebar .achievements-section .achievement-list .achievement-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 12px 0;
+  }
+
+  .skills .skills-sidebar .strengths-section .achievement-list .achievement-item {
+    padding: 10px 0;
+  }
+
+  .skills .skills-sidebar .strengths-section .achievement-list .achievement-item .achievement-text {
+    font-size: 13px;
+  }
+
+  /* Resume */
+  .resume .section-intro h2 {
+    font-size: 1.3rem;
+  }
+
+  .resume .professional-journey .experience-timeline {
+    padding-left: 1.2rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item {
+    margin-bottom: 2rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-dot {
+    left: -1.5rem;
+    width: 10px;
+    height: 10px;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content .position-meta .timeline-year {
+    font-size: 0.75rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h3 {
+    font-size: 1rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h4 {
+    font-size: 0.85rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content .key-achievements {
+    gap: 0.3rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content .key-achievements .achievement-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .resume .education-skills .education-grid .education-card {
+    padding: 1rem;
+  }
+
+  .resume .education-skills .education-grid .education-card .education-details p {
+    font-size: 0.85rem;
+  }
+
+  /* Portfolio */
+  .portfolio .portfolio-filters {
+    gap: 8px;
+  }
+
+  .portfolio .portfolio-filters li {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .portfolio .portfolio-image img {
+    height: 180px;
+  }
+
+  .portfolio .portfolio-content {
+    padding: 15px 12px;
+  }
+
+  .portfolio .portfolio-title {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .portfolio .portfolio-description {
+    font-size: 12px;
+  }
+
+  .portfolio .portfolio-overlay .portfolio-actions .action-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  /* Services */
+  .services .service-item {
+    padding: 20px 15px;
+  }
+
+  .services .service-item .service-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+  }
+
+  .services .service-item .service-icon i {
+    font-size: 18px;
+  }
+
+  .services .service-item .service-content h3 {
+    font-size: 1rem;
+  }
+
+  .services .service-item .service-content p {
+    font-size: 0.85rem;
+  }
+
+  .services .service-item .read-more {
+    font-size: 13px;
+  }
+
+  /* Contact */
+  .contact .info-item .info-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .contact .info-item .info-icon i {
+    font-size: 18px;
+  }
+
+  .contact .info-item .info-content h4 {
+    font-size: 16px;
+  }
+
+  .contact .form-wrapper .form-group input,
+  .contact .form-wrapper .form-group textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .contact .submit-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer h3.sitename {
+    font-size: 18px;
+  }
+
+  .footer p {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .footer .social-links a {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .footer .copyright {
+    font-size: 11px;
+  }
+}
+
+/* =====================
+   EXTRA SMALL (max 400px)
+   ===================== */
+@media (max-width: 400px) {
+  .hero .hero-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 0.85rem;
+  }
+
+  .hero .hero-content .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 24px;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 10px;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 220px;
+  }
+
+  .about .intro-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .about .profile-image-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about .expertise-item {
+    padding: 12px 10px;
+  }
+
+  .about .expertise-content h4 {
+    font-size: 1rem;
+  }
+
+  .about .expertise-content p {
+    font-size: 0.85rem;
+  }
+
+  .about .personality-section .type-scores .score-pair {
+    gap: 4px;
+  }
+
+  .about .personality-section .type-scores .score-letter {
+    font-size: 0.8rem;
+  }
+
+  .about .personality-section .type-scores .score-value {
+    font-size: 0.8rem;
+  }
+
+  .about .personality-section .personality-summary {
+    font-size: 0.85rem;
+  }
+
+  .portfolio .portfolio-image img {
+    height: 160px;
+  }
+
+  .portfolio .portfolio-title {
+    font-size: 14px;
+  }
+
+  .portfolio .portfolio-description {
+    font-size: 11px;
+  }
+
+  .contact .form-wrapper .form-group label {
+    font-size: 12px;
+  }
+
+  .footer .social-links {
+    gap: 10px;
+  }
+}
+
+/* =====================
+   LANDSCAPE MOBILE
+   ===================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero .container {
+    padding: 30px 15px;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 200px;
+  }
+}
+
+/* =====================
+   HIGH DPI SCREENS
+   ===================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* =====================
+   TOUCH DEVICE IMPROVEMENTS
+   ===================== */
+@media (hover: none) and (pointer: coarse) {
+  .hero .hero-content .hero-actions .btn-primary:hover,
+  .hero .hero-content .hero-actions .btn-secondary:hover {
+    transform: none;
+  }
+
+  .portfolio .portfolio-card:hover {
+    transform: none;
+  }
+
+  .services .service-item:hover {
+    transform: none;
+  }
+
+  .services .service-item:hover .service-icon {
+    background: transparent;
+  }
+
+  .services .service-item:hover .service-icon i {
+    color: var(--accent-color);
+    transform: none;
+  }
+
+  .about .bottom-section .action-buttons .btn-custom:hover {
+    transform: none;
+  }
+
+  .resume .education-skills .education-grid .education-card:hover {
+    transform: none;
+  }
+}
+
+/* =====================
+   PRINT STYLES
+   ===================== */
+@media print {
+  .header, .footer, .scroll-top, .preloader, .portfolio-overlay {
+    display: none !important;
+  }
+
+  section, .section {
+    padding: 20px 0;
+    break-inside: avoid;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 20px 0;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
