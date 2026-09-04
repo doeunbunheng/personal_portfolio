@@ -4087,165 +4087,308 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Enhanced Responsive Design - All Devices
+# Complete Mobile-First Responsive Design
 --------------------------------------------------------------*/
 
-/* =====================
-   BASE RESPONSIVE
-   ===================== */
-* {
-  -webkit-tap-highlight-color: transparent;
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+/* Ensure no horizontal overflow on ALL devices */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* =====================
-   TABLETS (768px - 992px)
+   HEADER - ALL MOBILE DEVICES
    ===================== */
-@media (max-width: 992px) {
+@media (max-width: 1199px) {
+  .header {
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+  }
+
+  .header.header-show {
+    transform: translateX(0);
+  }
+
+  .header .header-toggle {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1060;
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    border-radius: 10px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: none;
+  }
+
+  .header .profile-img img {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 4px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  }
+
+  .header .logo h1 {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .header .navmenu ul {
+    padding: 10px 0;
+  }
+
+  .header .navmenu a {
+    font-size: 15px;
+    padding: 12px 15px;
+  }
+
+  .header .social-links a {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
+}
+
+/* Header overlay backdrop on mobile */
+@media (max-width: 1199px) {
+  .header-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .header-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* =====================
+   HERO SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 1199px) {
   .hero {
     min-height: auto;
     padding: 100px 0 60px;
   }
-  
+
   .hero .container {
-    padding: 60px 15px;
+    padding: 40px 15px 60px;
   }
 
-  .hero .hero-content .hero-actions {
-    flex-wrap: wrap;
+  .hero .row {
+    align-items: center;
   }
 
-  .hero .hero-content .hero-stats {
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
+  .hero .hero-image {
+    order: 1;
+    margin-bottom: 30px;
   }
 
   .hero .hero-image .image-wrapper {
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
+  }
+
+  .hero .hero-image .image-wrapper img {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  .hero .hero-content {
+    order: 2;
+    text-align: center;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero .hero-content .hero-actions {
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .hero .hero-content .hero-actions .btn-primary,
+  .hero .hero-content .hero-actions .btn-secondary {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+
+  .hero .hero-content .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .hero .hero-content .stat-item {
+    text-align: center;
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 36px;
+    display: block;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 13px;
+    display: block;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 90px 0 40px;
+  }
+
+  .hero .container {
+    padding: 30px 15px 40px;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 280px;
+  }
+
+  .hero .floating-card {
+    display: none;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .hero .hero-content .hero-stats {
+    gap: 15px;
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 30px;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 80px 0 30px;
+  }
+
+  .hero .hero-image .image-wrapper {
+    max-width: 220px;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero .hero-content .hero-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero .hero-content .hero-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .hero .hero-content .hero-actions .btn-primary,
+  .hero .hero-content .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 14px;
+  }
+
+  .hero .hero-content .hero-stats {
+    gap: 10px;
+  }
+
+  .hero .hero-content .stat-number {
+    font-size: 26px;
+  }
+
+  .hero .hero-content .stat-label {
+    font-size: 11px;
+  }
+}
+
+/* =====================
+   ABOUT SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 992px) {
+  .about .row.align-items-start {
+    flex-direction: column;
+  }
+
+  .about .col-lg-4,
+  .about .col-lg-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .about .personality-section .personality-grid {
     grid-template-columns: 1fr;
   }
-
-  .about .personality-section .personality-main,
-  .about .personality-section .personality-column {
-    width: 100%;
-  }
-
-  .about .philosophy-quote {
-    padding: 2rem 2.5rem;
-  }
-
-  .portfolio .portfolio-filters {
-    gap: 20px;
-  }
-
-  .portfolio .portfolio-filters li {
-    font-size: 14px;
-    padding: 8px 0;
-  }
-
-  .services .service-item {
-    padding: 30px 25px;
-  }
 }
 
-/* =====================
-   MOBILE (576px - 768px)
-   ===================== */
 @media (max-width: 768px) {
-  /* Global */
-  section, .section {
-    padding: 50px 0;
-  }
-
-  .section-title {
-    padding-bottom: 40px;
-  }
-
-  .section-title h2 {
-    font-size: 28px;
-  }
-
-  /* Header */
-  .header .profile-img img {
-    width: 110px;
-    height: 110px;
-  }
-
-  .header .logo h1 {
-    font-size: 18px;
-  }
-
-  .header .navmenu ul li a {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-
-  /* Hero */
-  .hero .container {
-    padding: 40px 15px;
-  }
-
-  .hero .hero-content h1 {
-    font-size: 2rem;
-    line-height: 1.3;
-  }
-
-  .hero .hero-content .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-  }
-
-  .hero .hero-content .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-
-  .hero .hero-content .stat-item {
-    text-align: center;
-    padding: 10px 5px;
-  }
-
-  .hero .hero-content .stat-number {
-    font-size: 32px;
-  }
-
-  .hero .hero-content .stat-label {
-    font-size: 12px;
-    line-height: 1.3;
-  }
-
-  .hero .hero-image .image-wrapper {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  .hero .floating-card {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .hero .floating-card i {
-    font-size: 14px;
-  }
-
-  .hero .floating-card.card-1 { top: 10%; left: -5%; }
-  .hero .floating-card.card-2 { top: 50%; right: -8%; }
-  .hero .floating-card.card-3 { bottom: 10%; left: 5%; }
-
-  /* About */
   .about .intro-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .about .intro-header .subtitle {
@@ -4258,67 +4401,78 @@ img {
   }
 
   .about .profile-image-container {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto 1rem;
   }
 
+  .about .profile-meta {
+    justify-content: center;
+  }
+
+  .about .about-intro {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
   .about .expertise-grid {
-    gap: 1rem;
+    gap: 12px;
   }
 
   .about .expertise-item {
-    padding: 20px 15px;
+    padding: 15px 12px;
   }
 
   .about .expertise-content h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 6px;
   }
 
   .about .expertise-content p {
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.5;
   }
 
   .about .philosophy-quote {
     padding: 1.5rem 2rem;
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
 
   .about .philosophy-quote .quote-mark {
     font-size: 3rem;
+    left: 5px;
   }
 
   .about .philosophy-quote p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
   }
 
-  .about .personality-section {
-    margin-top: 2rem;
-  }
-
   .about .personality-section .section-intro h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
-  .about .personality-section .personality-main {
-    padding: 1.5rem;
-  }
-
+  .about .personality-section .personality-main,
   .about .personality-section .personality-block {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
 
-  .about .bottom-section {
-    padding-top: 2rem;
+  .about .personality-section .personality-summary {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .about .bottom-section .collaboration-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 
   .about .bottom-section .collaboration-text h3 {
-    font-size: 1.4rem;
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .about .bottom-section .collaboration-text p {
+    font-size: 0.9rem;
   }
 
   .about .bottom-section .action-buttons {
@@ -4330,19 +4484,59 @@ img {
     width: 100%;
     text-align: center;
     justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about .intro-header h1 {
+    font-size: 1.5rem;
   }
 
-  /* Stats */
-  .stats {
-    padding: 50px 0;
+  .about .profile-image-container {
+    width: 130px;
+    height: 130px;
   }
 
+  .about .expertise-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about .expertise-icon {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .about .personality-section .type-scores {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .about .personality-section .personality-main,
+  .about .personality-section .personality-block {
+    padding: 1rem;
+  }
+
+  .about .personality-section .personality-summary {
+    font-size: 0.85rem;
+  }
+}
+
+/* =====================
+   STATS SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
   .stats .achievements-row {
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .stats .achievement {
-    padding: 20px 15px;
+    padding: 15px 0;
+    gap: 15px;
   }
 
   .stats .achievement-icon {
@@ -4353,374 +4547,21 @@ img {
 
   .stats .achievement-content h4 {
     font-size: 16px;
+    margin-bottom: 4px;
   }
 
   .stats .achievement-content p {
     font-size: 13px;
   }
-
-  /* Skills */
-  .skills .intro-content .lead-text {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  .skills .skills-container .skill-category {
-    padding: 25px 20px;
-  }
-
-  .skills .skills-container .skill-category .category-header .category-title {
-    font-size: 20px;
-  }
-
-  .skills .skills-container .skill-category .category-header .category-subtitle {
-    font-size: 14px;
-  }
-
-  .skills .skills-container .skill-category .skills-list .skill-row .skill-info .skill-name {
-    font-size: 14px;
-  }
-
-  .skills .skills-sidebar {
-    margin-top: 2rem;
-  }
-
-  .skills .skills-sidebar .expertise-highlight {
-    padding: 30px 20px;
-    margin-bottom: 25px;
-  }
-
-  .skills .skills-sidebar .expertise-highlight .highlight-icon i {
-    font-size: 36px;
-  }
-
-  .skills .skills-sidebar .expertise-highlight .highlight-title {
-    font-size: 18px;
-  }
-
-  .skills .skills-sidebar .expertise-highlight .experience-number .purecounter {
-    font-size: 42px;
-  }
-
-  .skills .skills-sidebar .technologies-section .tech-stack {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .skills .skills-sidebar .technologies-section .tech-stack .tech-item {
-    padding: 12px 10px;
-    gap: 8px;
-  }
-
-  .skills .skills-sidebar .technologies-section .tech-stack .tech-item i {
-    font-size: 16px;
-  }
-
-  .skills .skills-sidebar .technologies-section .tech-stack .tech-item span {
-    font-size: 12px;
-  }
-
-  /* Resume */
-  .resume .professional-journey .experience-timeline {
-    padding-left: 1.5rem;
-  }
-
-  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h3 {
-    font-size: 1.1rem;
-  }
-
-  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h4 {
-    font-size: 0.9rem;
-  }
-
-  .resume .professional-journey .experience-timeline .timeline-item .timeline-content p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .resume .education-skills .education-grid .education-card {
-    padding: 1.5rem;
-  }
-
-  .resume .education-skills .education-grid .education-card .education-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .resume .education-skills .education-grid .education-card .education-header .degree-icon {
-    margin: 0 auto;
-  }
-
-  .resume .education-skills .education-grid .certification-section .certifications .cert-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .resume .education-skills .education-grid .certification-section .certifications .cert-item .cert-details {
-    width: 100%;
-  }
-
-  /* Portfolio */
-  .portfolio .portfolio-filters {
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .portfolio .portfolio-filters li {
-    font-size: 13px;
-    padding: 6px 0;
-  }
-
-  .portfolio .portfolio-image img {
-    height: 220px;
-  }
-
-  .portfolio .portfolio-content {
-    padding: 20px 15px;
-  }
-
-  .portfolio .portfolio-title {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-
-  .portfolio .portfolio-description {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  .portfolio .portfolio-meta {
-    margin-bottom: 8px;
-  }
-
-  .portfolio .portfolio-meta .portfolio-category {
-    font-size: 11px;
-  }
-
-  .portfolio .portfolio-meta .portfolio-year {
-    font-size: 11px;
-  }
-
-  /* Services */
-  .services {
-    padding: 50px 0;
-  }
-
-  .services .service-item {
-    padding: 25px 20px;
-    margin-bottom: 15px;
-  }
-
-  .services .service-item .service-icon {
-    width: 50px;
-    height: 50px;
-    min-width: 50px;
-  }
-
-  .services .service-item .service-icon i {
-    font-size: 20px;
-  }
-
-  .services .service-item .service-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-
-  .services .service-item .service-content p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-
-  /* Contact */
-  .contact {
-    padding: 60px 0;
-  }
-
-  .contact .info-item {
-    margin-bottom: 40px;
-  }
-
-  .contact .info-item .info-content h4 {
-    font-size: 18px;
-  }
-
-  .contact .info-item .info-content p {
-    font-size: 14px;
-  }
-
-  .contact .contact-details .detail-item {
-    gap: 15px;
-    margin-bottom: 25px;
-  }
-
-  .contact .contact-details .detail-item .detail-content .detail-label {
-    font-size: 12px;
-  }
-
-  .contact .contact-details .detail-item .detail-content .detail-value {
-    font-size: 14px;
-  }
-
-  .contact .form-header h3 {
-    font-size: 22px;
-  }
-
-  .contact .form-wrapper .form-group input,
-  .contact .form-wrapper .form-group textarea {
-    padding: 12px 15px;
-    font-size: 14px;
-  }
-
-  /* Footer */
-  .footer {
-    padding: 40px 0 20px;
-  }
-
-  .footer h3.sitename {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-
-  .footer p {
-    font-size: 13px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-
-  .footer .social-links a {
-    width: 36px;
-    height: 36px;
-    font-size: 16px;
-  }
-
-  .footer .copyright {
-    font-size: 12px;
-  }
 }
 
-/* =====================
-   SMALL MOBILE (max 576px)
-   ===================== */
 @media (max-width: 576px) {
-  /* Global */
-  section, .section {
+  .stats {
     padding: 40px 0;
   }
 
-  .section-title h2 {
-    font-size: 24px;
-  }
-
-  /* Header */
-  .header .profile-img img {
-    width: 90px;
-    height: 90px;
-  }
-
-  .header .logo h1 {
-    font-size: 16px;
-  }
-
-  .header .social-links a {
-    width: 32px;
-    height: 32px;
-    font-size: 14px;
-  }
-
-  /* Hero */
-  .hero .hero-content h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero .hero-content .hero-description {
-    font-size: 0.9rem;
-  }
-
-  .hero .hero-content .hero-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero .hero-content .hero-actions .btn-primary,
-  .hero .hero-content .hero-actions .btn-secondary {
-    width: 100%;
-    text-align: center;
-    padding: 12px 24px;
-  }
-
-  .hero .hero-content .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-
-  .hero .hero-content .stat-number {
-    font-size: 28px;
-  }
-
-  .hero .hero-content .stat-label {
-    font-size: 11px;
-  }
-
-  .hero .hero-image .image-wrapper {
-    max-width: 260px;
-  }
-
-  .hero .floating-card {
-    display: none;
-  }
-
-  /* About */
-  .about .intro-header h1 {
-    font-size: 1.5rem;
-  }
-
-  .about .profile-image-container {
-    width: 140px;
-    height: 140px;
-  }
-
-  .about .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about .expertise-item {
-    padding: 15px 12px;
-  }
-
-  .about .philosophy-quote {
-    padding: 1.2rem 1.5rem;
-  }
-
-  .about .philosophy-quote .quote-mark {
-    font-size: 2.5rem;
-    left: 5px;
-  }
-
-  .about .personality-section .personality-main {
-    padding: 1rem;
-  }
-
-  .about .personality-section .personality-block {
-    padding: 1rem;
-  }
-
-  .about .personality-section .type-badge {
-    font-size: 0.9rem;
-    padding: 4px 10px;
-  }
-
-  /* Stats */
-  .stats .achievements-row {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
   .stats .achievement {
-    padding: 15px 12px;
-    gap: 12px;
+    padding: 12px 0;
   }
 
   .stats .achievement-icon {
@@ -4736,18 +4577,44 @@ img {
   .stats .achievement-content p {
     font-size: 12px;
   }
+}
 
-  /* Skills */
+/* =====================
+   SKILLS SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 992px) {
+  .skills .row > .col-lg-8,
+  .skills .row > .col-lg-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .skills .skills-sidebar {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
   .skills .intro-content .lead-text {
     font-size: 16px;
+    line-height: 1.6;
   }
 
   .skills .skills-container .skill-category {
     padding: 20px 15px;
   }
 
+  .skills .skills-container .skill-category .category-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
   .skills .skills-container .skill-category .category-header .category-title {
     font-size: 18px;
+  }
+
+  .skills .skills-container .skill-category .category-header .category-subtitle {
+    font-size: 13px;
   }
 
   .skills .skills-container .skill-category .skills-list .skill-row .skill-info .skill-name {
@@ -4758,8 +4625,25 @@ img {
     font-size: 12px;
   }
 
+  .skills .skills-sidebar .expertise-highlight {
+    padding: 25px 18px;
+    margin-bottom: 20px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .highlight-icon i {
+    font-size: 32px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .highlight-title {
+    font-size: 16px;
+  }
+
   .skills .skills-sidebar .expertise-highlight .experience-number .purecounter {
-    font-size: 36px;
+    font-size: 38px;
+  }
+
+  .skills .skills-sidebar .expertise-highlight .highlight-description {
+    font-size: 14px;
   }
 
   .skills .skills-sidebar .technologies-section .tech-stack {
@@ -4769,7 +4653,7 @@ img {
 
   .skills .skills-sidebar .technologies-section .tech-stack .tech-item {
     padding: 10px 8px;
-    gap: 6px;
+    gap: 8px;
   }
 
   .skills .skills-sidebar .technologies-section .tech-stack .tech-item i {
@@ -4779,39 +4663,82 @@ img {
   .skills .skills-sidebar .technologies-section .tech-stack .tech-item span {
     font-size: 11px;
   }
+}
 
-  .skills .skills-sidebar .achievements-section .achievement-list .achievement-item {
+@media (max-width: 576px) {
+  .skills .skills-container .skill-category {
+    padding: 15px 12px;
+  }
+
+  .skills .skills-container .skill-category .category-header .category-title {
+    font-size: 16px;
+  }
+
+  .skills .skills-container .skill-category .skills-list .skill-row {
+    margin-bottom: 16px;
+  }
+
+  .skills .skills-sidebar .achievements-section .achievement-list .achievement-item,
+  .skills .skills-sidebar .strengths-section .achievement-list .achievement-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    padding: 12px 0;
-  }
-
-  .skills .skills-sidebar .strengths-section .achievement-list .achievement-item {
     padding: 10px 0;
   }
 
+  .skills .skills-sidebar .achievements-section .achievement-list .achievement-item .achievement-date {
+    min-width: auto;
+  }
+
+  .skills .skills-sidebar .achievements-section .achievement-list .achievement-item .achievement-text,
   .skills .skills-sidebar .strengths-section .achievement-list .achievement-item .achievement-text {
     font-size: 13px;
   }
+}
 
-  /* Resume */
+/* =====================
+   RESUME SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
   .resume .section-intro h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .resume .professional-journey .experience-timeline {
-    padding-left: 1.2rem;
-  }
-
-  .resume .professional-journey .experience-timeline .timeline-item {
-    margin-bottom: 2rem;
+    padding-left: 1.5rem;
   }
 
   .resume .professional-journey .experience-timeline .timeline-item .timeline-dot {
-    left: -1.5rem;
-    width: 10px;
-    height: 10px;
+    left: -1.8rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content h4 {
+    font-size: 0.9rem;
+  }
+
+  .resume .professional-journey .experience-timeline .timeline-item .timeline-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .resume .education-skills .education-grid .education-card .education-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .resume .education-skills .education-grid .education-card .education-header .degree-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .resume .section-intro h2 {
+    font-size: 1.3rem;
   }
 
   .resume .professional-journey .experience-timeline .timeline-item .timeline-content .position-meta .timeline-year {
@@ -4828,11 +4755,6 @@ img {
 
   .resume .professional-journey .experience-timeline .timeline-item .timeline-content p {
     font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  .resume .professional-journey .experience-timeline .timeline-item .timeline-content .key-achievements {
-    gap: 0.3rem;
   }
 
   .resume .professional-journey .experience-timeline .timeline-item .timeline-content .key-achievements .achievement-tag {
@@ -4841,29 +4763,39 @@ img {
   }
 
   .resume .education-skills .education-grid .education-card {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 
   .resume .education-skills .education-grid .education-card .education-details p {
     font-size: 0.85rem;
   }
 
-  /* Portfolio */
+  .resume .education-skills .education-grid .certification-section {
+    margin-top: 1.5rem;
+  }
+}
+
+/* =====================
+   PORTFOLIO SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
   .portfolio .portfolio-filters {
-    gap: 8px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .portfolio .portfolio-filters li {
-    font-size: 12px;
-    padding: 5px 0;
+    font-size: 13px;
+    padding: 6px 4px;
   }
 
   .portfolio .portfolio-image img {
-    height: 180px;
+    height: 200px;
   }
 
   .portfolio .portfolio-content {
-    padding: 15px 12px;
+    padding: 15px 10px;
   }
 
   .portfolio .portfolio-title {
@@ -4873,6 +4805,35 @@ img {
 
   .portfolio .portfolio-description {
     font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .portfolio .portfolio-meta {
+    margin-bottom: 6px;
+  }
+
+  .portfolio .portfolio-meta .portfolio-category,
+  .portfolio .portfolio-meta .portfolio-year {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .portfolio .portfolio-filters li {
+    font-size: 12px;
+    padding: 5px 2px;
+  }
+
+  .portfolio .portfolio-image img {
+    height: 180px;
+  }
+
+  .portfolio .portfolio-title {
+    font-size: 14px;
+  }
+
+  .portfolio .portfolio-description {
+    font-size: 11px;
   }
 
   .portfolio .portfolio-overlay .portfolio-actions .action-btn {
@@ -4880,46 +4841,143 @@ img {
     height: 36px;
     font-size: 14px;
   }
+}
 
-  /* Services */
+/* =====================
+   SERVICES SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
+  .services {
+    padding: 50px 0;
+  }
+
+  .services .row.g-5 {
+    gap: 15px !important;
+  }
+
   .services .service-item {
     padding: 20px 15px;
+    margin-bottom: 0;
   }
 
   .services .service-item .service-icon {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
   }
 
   .services .service-item .service-icon i {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .services .service-item .service-content h3 {
     font-size: 1rem;
+    margin-bottom: 8px;
   }
 
   .services .service-item .service-content p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
   }
 
   .services .service-item .read-more {
     font-size: 13px;
   }
+}
 
-  /* Contact */
-  .contact .info-item .info-icon {
-    width: 48px;
-    height: 48px;
+@media (max-width: 576px) {
+  .services .service-item {
+    padding: 18px 12px;
   }
 
-  .contact .info-item .info-icon i {
-    font-size: 18px;
+  .services .service-item .service-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+  }
+
+  .services .service-item .service-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .services .service-item .service-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* =====================
+   CONTACT SECTION - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
+  .contact {
+    padding: 50px 0;
+  }
+
+  .contact .info-item {
+    margin-bottom: 30px;
+  }
+
+  .contact .info-item .info-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
   }
 
   .contact .info-item .info-content h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .contact .info-item .info-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .contact .contact-details .detail-item {
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .contact .contact-details .detail-item .detail-content .detail-label {
+    font-size: 12px;
+  }
+
+  .contact .contact-details .detail-item .detail-content .detail-value {
+    font-size: 14px;
+    word-break: break-word;
+  }
+
+  .contact .form-header h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact .form-wrapper .form-group {
+    margin-bottom: 20px;
+  }
+
+  .contact .form-wrapper .form-group label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .contact .form-wrapper .form-group input,
+  .contact .form-wrapper .form-group select,
+  .contact .form-wrapper .form-group textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact .info-item .info-content h4 {
     font-size: 16px;
+  }
+
+  .contact .form-wrapper {
+    padding: 15px 10px;
   }
 
   .contact .form-wrapper .form-group input,
@@ -4929,18 +4987,58 @@ img {
   }
 
   .contact .submit-btn {
-    padding: 12px 24px;
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
     font-size: 14px;
   }
+}
 
-  /* Footer */
+/* =====================
+   FOOTER - ALL MOBILE
+   ===================== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px;
+    text-align: center;
+  }
+
+  .footer h3.sitename {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    padding: 0 15px;
+  }
+
+  .footer .social-links {
+    margin-bottom: 15px;
+  }
+
+  .footer .social-links a {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .footer .copyright {
+    font-size: 12px;
+    padding-top: 15px;
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  }
+}
+
+@media (max-width: 576px) {
   .footer h3.sitename {
     font-size: 18px;
   }
 
   .footer p {
     font-size: 12px;
-    padding: 0 10px;
   }
 
   .footer .social-links a {
@@ -4955,88 +5053,65 @@ img {
 }
 
 /* =====================
-   EXTRA SMALL (max 400px)
+   GENERAL MOBILE FIXES
    ===================== */
-@media (max-width: 400px) {
-  .hero .hero-content h1 {
-    font-size: 1.4rem;
+@media (max-width: 992px) {
+  .section-title {
+    padding-bottom: 40px;
   }
 
-  .hero .hero-content .hero-description {
-    font-size: 0.85rem;
+  .section-title h2 {
+    font-size: 28px;
   }
 
-  .hero .hero-content .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
+  section, .section {
+    padding: 50px 0;
   }
 
-  .hero .hero-content .stat-number {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .col-lg-6,
+  .col-lg-4,
+  .col-lg-8,
+  .col-md-6 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    padding-bottom: 30px;
+  }
+
+  .section-title h2 {
     font-size: 24px;
   }
 
-  .hero .hero-content .stat-label {
-    font-size: 10px;
+  section, .section {
+    padding: 35px 0;
   }
 
-  .hero .hero-image .image-wrapper {
-    max-width: 220px;
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
+}
 
-  .about .intro-header h1 {
-    font-size: 1.3rem;
-  }
-
-  .about .profile-image-container {
-    width: 120px;
-    height: 120px;
-  }
-
-  .about .expertise-item {
-    padding: 12px 10px;
-  }
-
-  .about .expertise-content h4 {
-    font-size: 1rem;
-  }
-
-  .about .expertise-content p {
-    font-size: 0.85rem;
-  }
-
-  .about .personality-section .type-scores .score-pair {
-    gap: 4px;
-  }
-
-  .about .personality-section .type-scores .score-letter {
-    font-size: 0.8rem;
-  }
-
-  .about .personality-section .type-scores .score-value {
-    font-size: 0.8rem;
-  }
-
-  .about .personality-section .personality-summary {
-    font-size: 0.85rem;
-  }
-
-  .portfolio .portfolio-image img {
-    height: 160px;
-  }
-
-  .portfolio .portfolio-title {
-    font-size: 14px;
-  }
-
-  .portfolio .portfolio-description {
-    font-size: 11px;
-  }
-
-  .contact .form-wrapper .form-group label {
-    font-size: 12px;
-  }
-
-  .footer .social-links {
-    gap: 10px;
+/* =====================
+   TOUCH DEVICE IMPROVEMENTS
+   ===================== */
+@media (hover: none) and (pointer: coarse) {
+  .hero .hero-content .hero-actions .btn-primary:hover,
+  .hero .hero-content .hero-actions .btn-secondary:hover,
+  .portfolio .portfolio-card:hover,
+  .services .service-item:hover,
+  .about .bottom-section .action-buttons .btn-custom:hover,
+  .resume .education-skills .education-grid .education-card:hover {
+    transform: none;
   }
 }
 
@@ -5049,56 +5124,12 @@ img {
     padding: 60px 0;
   }
 
-  .hero .container {
-    padding: 30px 15px;
-  }
-
   .hero .hero-image .image-wrapper {
-    max-width: 200px;
-  }
-}
-
-/* =====================
-   HIGH DPI SCREENS
-   ===================== */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  img {
-    image-rendering: -webkit-optimize-contrast;
-  }
-}
-
-/* =====================
-   TOUCH DEVICE IMPROVEMENTS
-   ===================== */
-@media (hover: none) and (pointer: coarse) {
-  .hero .hero-content .hero-actions .btn-primary:hover,
-  .hero .hero-content .hero-actions .btn-secondary:hover {
-    transform: none;
+    max-width: 180px;
   }
 
-  .portfolio .portfolio-card:hover {
-    transform: none;
-  }
-
-  .services .service-item:hover {
-    transform: none;
-  }
-
-  .services .service-item:hover .service-icon {
-    background: transparent;
-  }
-
-  .services .service-item:hover .service-icon i {
-    color: var(--accent-color);
-    transform: none;
-  }
-
-  .about .bottom-section .action-buttons .btn-custom:hover {
-    transform: none;
-  }
-
-  .resume .education-skills .education-grid .education-card:hover {
-    transform: none;
+  .hero .hero-content h1 {
+    font-size: 1.4rem;
   }
 }
 
@@ -5106,18 +5137,18 @@ img {
    PRINT STYLES
    ===================== */
 @media print {
-  .header, .footer, .scroll-top, .preloader, .portfolio-overlay {
+  .header, .footer, .scroll-top, .preloader, .portfolio-overlay, .header-toggle {
     display: none !important;
   }
 
   section, .section {
-    padding: 20px 0;
+    padding: 15px 0;
     break-inside: avoid;
   }
 
   .hero {
     min-height: auto;
-    padding: 20px 0;
+    padding: 15px 0;
   }
 
   body {
