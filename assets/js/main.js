@@ -10,16 +10,22 @@
   "use strict";
 
   /**
-   * Header toggle
+   * Header toggle with backdrop overlay for mobile
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  let overlay = document.createElement('div');
+  overlay.className = 'header-overlay';
+  document.body.appendChild(overlay);
 
   function headerToggle() {
     document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    overlay.classList.toggle('active');
   }
+
   headerToggleBtn.addEventListener('click', headerToggle);
+  overlay.addEventListener('click', headerToggle);
 
   /**
    * Hide mobile nav on same-page/hash links
