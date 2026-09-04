@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Portfolio Details - DOEUN Bunheng</title>
-  <meta name="description" content="Project details from DOEUN Bunheng's data science portfolio.">
+  <title>Khmer Sentiment Engine - DOEUN Bunheng</title>
+  <meta name="description" content="Khmer Sentiment Engine - A full-stack multilingual NLP system for Khmer, English, and mixed comment analysis.">
   <meta name="keywords" content="">
 
   <link href="assets/img/favicon.png" rel="icon">
@@ -82,22 +82,23 @@
             <div class="col-lg-6" data-aos="fade-right">
               <div class="project-header">
                 <div class="project-meta">
-                  <span class="category">Data Visualization</span>
+                  <span class="category">NLP / AI</span>
                   <span class="year">2026</span>
                 </div>
-                <h1 class="project-title">Lung Cancer Analysis Dashboard</h1>
-                <p class="project-summary">A comprehensive 6-page interactive Power BI dashboard analyzing 220,632 patient records across 25 countries to identify key risk factors and survival patterns in lung cancer diagnosis and treatment.</p>
+                <h1 class="project-title">Khmer Sentiment Engine</h1>
+                <p class="project-summary">A full-stack multilingual NLP system that analyzes Khmer, English, and mixed (code-switched) customer comments with sentiment classification, business aspect analysis, emotion detection, and an AI chat assistant.</p>
                 <div class="project-tags">
-                  <span class="tag">Power BI</span>
-                  <span class="tag">DAX</span>
-                  <span class="tag">Python</span>
-                  <span class="tag">Healthcare</span>
+                  <span class="tag">xlm-roberta</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Streamlit</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Docker</span>
                 </div>
               </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
               <div class="hero-image">
-                <img src="assets/img/portfolio/HG.jpg" alt="Lung Cancer Dashboard" class="img-fluid" loading="lazy">
+                <img src="assets/img/portfolio/AI1.webp" alt="Khmer Sentiment Engine" class="img-fluid" loading="lazy">
               </div>
             </div>
           </div>
@@ -108,36 +109,36 @@
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
               <div class="main-content">
                 <h2>Project Overview</h2>
-                <p>Built a 6-page interactive Power BI dashboard analyzing 220,632 patient records across 25 countries and 24 variables to identify key risk factors, treatment patterns, and survival outcomes in lung cancer patients.</p>
-                <p>Designed structured pages including: Overview, Smoking & Risk Factors, Treatment & Survival, Risk & Correlation Analysis, Healthcare & Environment, and Executive Summary. Created 12+ DAX measures including Diagnosis Rate %, Early Detection Rate by Healthcare Access, Smoker Diagnosis Rate, and Average Survival Years. Built disconnected DAX tables for risk scenario modeling and heatmap-style matrix visuals with conditional formatting for cross-factor analysis.</p>
-                <p>Identified smoking as the dominant risk factor (7.07% diagnosis rate vs 2.05% for non-smokers — a 3.4x gap); all environmental factors clustered near the 4.06% population average. Found healthcare access drives a 3x early detection gap (60% good access vs 20% poor access), directly influencing survival outcomes. Delivered actionable public health insights aligned with UN SDGs 3, 10, and 17.</p>
+                <p>Built a complete machine-learning system that reads Khmer, English, and mixed (code-switched) customer comments and provides businesses with sentiment classification (positive/negative/neutral), 5 business aspect categories, 8 emotion labels, and an honest "not sure" flag when confidence is low.</p>
+                <p>Fine-tuned xlm-roberta-base achieving 86.6% accuracy on 30,000 balanced samples from 39,783 labeled Khmer comments sourced from HuggingFace datasets. Implemented a FastAPI backend with HMAC authentication, Streamlit dashboard with YouTube comment collection, correction tracking, and Docker deployment. The system includes an AI chat assistant that explains results in plain language with multi-provider support (offline/local/Gemini/GPT).</p>
+                <p>Features real-time YouTube comment analysis, admin correction dashboard for model improvement, and 233+ automated tests covering API, models, collectors, and dashboard. The engine processes text through Khmer-specific preprocessing including text cleaning, word segmentation, and language detection for accurate multilingual classification.</p>
               </div>
             </div>
             <div class="col-lg-4 offset-lg-1" data-aos="fade-up" data-aos-delay="200">
               <div class="project-specs">
                 <div class="spec-item">
-                  <h5>Dataset Size</h5>
-                  <p>220,632 records, 24 variables, 25 countries</p>
+                  <h5>Model Accuracy</h5>
+                  <p>86.6% on balanced 30K dataset</p>
+                </div>
+                <div class="spec-item">
+                  <h5>Training Data</h5>
+                  <p>39,783 labeled Khmer comments</p>
                 </div>
                 <div class="spec-item">
                   <h5>Timeline</h5>
-                  <p>05/2026 - 06/2026</p>
+                  <p>03/2026 - 06/2026</p>
                 </div>
                 <div class="spec-item">
                   <h5>My Role</h5>
-                  <p>Data Analyst & Dashboard Developer</p>
+                  <p>Full-Stack ML Engineer</p>
                 </div>
                 <div class="spec-item">
-                  <h5>Tools</h5>
-                  <p>Power BI, DAX, Python</p>
+                  <h5>Backend</h5>
+                  <p>FastAPI + PostgreSQL + Docker</p>
                 </div>
                 <div class="spec-item">
-                  <h5>Dataset</h5>
-                  <p>220,632 records, 25 countries</p>
-                </div>
-                <div class="spec-item">
-                  <h5>Impact</h5>
-                  <p>UN SDGs 3, 10, 17 aligned</p>
+                  <h5>Tests</h5>
+                  <p>233+ automated tests passing</p>
                 </div>
               </div>
             </div>
@@ -147,25 +148,25 @@
         <div class="impact-metrics" data-aos="fade-up" data-aos-delay="100">
           <div class="metrics-container">
             <div class="metrics-header">
-              <h2>Key Findings</h2>
-              <p>Data-driven insights uncovered through comprehensive analysis of patient records.</p>
+              <h2>Key Achievements</h2>
+              <p>Technical milestones and performance metrics from the Khmer Sentiment Engine project.</p>
             </div>
             <div class="metrics-grid">
               <div class="metric-card" data-aos="fade-up" data-aos-delay="150">
-                <div class="metric-value">3.4x</div>
-                <div class="metric-label">Higher Diagnosis Rate for Smokers</div>
+                <div class="metric-value">86.6%</div>
+                <div class="metric-label">Model Accuracy (v3)</div>
               </div>
               <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="metric-value">3x</div>
-                <div class="metric-label">Early Detection Gap (Access)</div>
+                <div class="metric-value">39K+</div>
+                <div class="metric-label">Labeled Khmer Comments</div>
               </div>
               <div class="metric-card" data-aos="fade-up" data-aos-delay="250">
-                <div class="metric-value">12+</div>
-                <div class="metric-label">DAX Measures Created</div>
+                <div class="metric-value">233+</div>
+                <div class="metric-label">Automated Tests</div>
               </div>
               <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="metric-value">6</div>
-                <div class="metric-label">Interactive Dashboard Pages</div>
+                <div class="metric-value">5</div>
+                <div class="metric-label">Business Aspects Detected</div>
               </div>
             </div>
           </div>
