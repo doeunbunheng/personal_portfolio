@@ -289,6 +289,61 @@
 .index-page .section-title { padding-bottom: clamp(2rem, 6vw, 4rem); }
 .index-page .portfolio .portfolio-item .portfolio-image { border-radius: 1rem 1rem 0 0; }
 
+.interest-context { max-width: 42rem; }
+.bootcamp-link { text-decoration: underline; text-underline-offset: .16em; }
+
+.bootcamp-title { font-size: clamp(1.25rem, 3vw, 1.75rem); }
+
+.bootcamp-roadmap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: .75rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bootcamp-roadmap li {
+  display: grid;
+  align-content: start;
+  gap: .3rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent-color);
+  border-radius: .8rem;
+  background: var(--surface-color);
+}
+
+.bootcamp-roadmap i {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: .4rem;
+  border-radius: 50%;
+  background: var(--soft-surface);
+  color: var(--accent-color);
+}
+
+.bootcamp-roadmap span { color: var(--muted-ink); font-size: .875rem; }
+.bootcamp-roadmap p { margin: 0; color: var(--muted-ink); }
+.project-affiliation { color: var(--accent-color); font-weight: 600; }
+
+.interest-profile {
+  padding: .9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface-color);
+}
+
+.interest-profile summary {
+  cursor: pointer;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.interest-profile[open] summary { margin-bottom: 1rem; }
+
 .index-page .contact .editorial-contact {
   padding: clamp(1.25rem, 4vw, 3rem);
   border: 1px solid var(--line);
