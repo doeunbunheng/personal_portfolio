@@ -24,8 +24,52 @@
     overlay.classList.toggle('active');
   }
 
-  headerToggleBtn.addEventListener('click', headerToggle);
-  overlay.addEventListener('click', headerToggle);
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+    overlay.addEventListener('click', headerToggle);
+  }
+
+  const portfolioHeader = document.querySelector('.portfolio-header');
+  if (portfolioHeader) {
+    const menu = portfolioHeader.querySelector('.portfolio-menu');
+    const theme = portfolioHeader.querySelector('.theme-toggle');
+    const root = document.documentElement;
+
+    function setMenu(expanded) {
+      portfolioHeader.classList.toggle('menu-open', expanded);
+      menu.setAttribute('aria-expanded', String(expanded));
+      menu.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+      menu.classList.toggle('bi-list', !expanded);
+      menu.classList.toggle('bi-x-lg', expanded);
+    }
+
+    menu.addEventListener('click', () => setMenu(!portfolioHeader.classList.contains('menu-open')));
+    portfolioHeader.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('click', event => {
+      if (!portfolioHeader.contains(event.target)) setMenu(false);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && portfolioHeader.classList.contains('menu-open')) {
+        setMenu(false);
+        menu.focus();
+      }
+    });
+
+    function updateThemeToggle() {
+      const dark = root.dataset.theme === 'dark';
+      theme.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      theme.querySelector('i').className = dark ? 'bi bi-sun' : 'bi bi-moon-stars';
+    }
+
+    updateThemeToggle();
+    theme.addEventListener('click', () => {
+      root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem('portfolio-theme', root.dataset.theme);
+      } catch {}
+      updateThemeToggle();
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -215,5 +259,23 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  if (portfolioHeader) {
+    const links = [...portfolioHeader.querySelectorAll('nav a')];
+
+    function updatePortfolioNav() {
+      const position = window.scrollY + portfolioHeader.offsetHeight + 32;
+      const current = links.findLast(link => document.getElementById(link.hash.slice(1)).offsetTop <= position) ?? links[0];
+      links.forEach(link => {
+        link.classList.toggle('active', link === current);
+        if (link === current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+
+    window.addEventListener('load', updatePortfolioNav);
+    window.addEventListener('resize', updatePortfolioNav);
+    document.addEventListener('scroll', updatePortfolioNav, { passive: true });
+  }
 
 })();
